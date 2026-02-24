@@ -8,3 +8,9 @@ class Nave:
             self.hundido = False
 
 
+class Casilla:
+    def __init__(self, numx, numy, ocupada, tipoNave):
+        self.numx = numx
+        self.numy = numy
+        self.ocupada = ocupada
+        self.tipoNave = tipoNave
