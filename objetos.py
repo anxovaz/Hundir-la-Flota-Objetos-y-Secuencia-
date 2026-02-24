@@ -14,3 +14,9 @@ class Casilla:
         self.numy = numy
         self.ocupada = ocupada
         self.tipoNave = tipoNave
+
+class Tablero:
+    def __init__(self, casillasX, casillasY, ocupadas = []):
+        self.casillasX = casillasX
+        self.casillasY = casillasY
+        self.ocupadas = ocupadas
