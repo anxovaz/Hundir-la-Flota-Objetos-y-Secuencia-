@@ -2,6 +2,7 @@ from nave import Nave
 class Tablero:
     def __init__(self, tamano):
         self.__tamano = tamano
+        self.__init_tablero()
 
     @property
     def tamano(self):
@@ -20,7 +21,16 @@ class Tablero:
         else:
             raise TypeError("Tamano incorrecto")
 
-    def comprobar_impacto(self): #verifica impacto en coordenadas
+    def __init_tablero(self):
+        self.__tablero = []
+        for i in self.__tamano:
+            for j in self.__tamano:
+                self.__tablero.append("")
+
+    def comprobar_impacto(self,x,y): #verifica impacto en coordenadas
+        pass
+
+    def colocar_nave(self,nave,x,y,orientacion):
         pass
 
     def __str__(self):

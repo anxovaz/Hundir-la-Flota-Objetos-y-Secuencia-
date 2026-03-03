@@ -7,27 +7,32 @@ class Juego:
     @property
     def tablero(self):
         return self.__tablero
-
     @tablero.setter
     def tablero(self,tablero):
         if isinstance(tablero,Tablero):
             self.__tablero = tablero
         else:
-            raise TypeError("Valor no válido")
+            raise TypeError("Tablero incorrecto")
 
     def lanzar_ataque(self,x,y):
         ataque = self.__tablero.comprobar_impacto(x,y)
         self.mostrar_resultado(ataque)
 
     def mostrar_resultado(self,resultado):
-        if resultado:
-            return "Impacto"
-        else:
+        if resultado == 0:
             return "Agua"
+        elif resultado == 1:
+            return "Tocado"
+        else:
+            return "Hundido"
 
     def inicializar_naves(self):
         #colocar naves
         pass
+
+if __name__ == "__main__":
+    j1 = Juego(10)
+    print(j1.lanzar_ataque(2,3))
 
 
 
