@@ -20,19 +20,22 @@ class Juego:
 
     def mostrar_resultado(self,resultado):
         if resultado == 0:
-            return "Agua"
+            print("Agua")
         elif resultado == 1:
-            return "Tocado"
+            print("Tocado")
         else:
-            return "Hundido"
+            print("Hundido")
+
+        return resultado
 
     def inicializar_naves(self):
         #colocar naves
         pass
 
 if __name__ == "__main__":
-    j1 = Juego(10)
-    print(j1.lanzar_ataque(2,3))
+    t1 = Tablero(10)
+    j1 = Juego(t1)
+    j1.lanzar_ataque(2,3)
 
 
 

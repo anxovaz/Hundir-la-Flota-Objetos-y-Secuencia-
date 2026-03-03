@@ -2,7 +2,10 @@ from nave import Nave
 class Tablero:
     def __init__(self, tamano):
         self.__tamano = tamano
-        self.__init_tablero()
+        #self.__init_tablero()
+        self.AGUA = 0
+        self.TOCADO = 1
+        self.HUNDIDO = 2
 
     @property
     def tamano(self):
@@ -23,12 +26,12 @@ class Tablero:
 
     def __init_tablero(self):
         self.__tablero = []
-        for i in self.__tamano:
-            for j in self.__tamano:
+        for i in enumerate(self.__tamano):
+            for j in enumerate(self.__tamano):
                 self.__tablero.append("")
 
     def comprobar_impacto(self,x,y): #verifica impacto en coordenadas
-        pass
+        return self.AGUA
 
     def colocar_nave(self,nave,x,y,orientacion):
         pass
