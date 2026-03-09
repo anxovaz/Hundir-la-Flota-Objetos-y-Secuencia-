@@ -12,10 +12,25 @@ class Nave:
         return self.__tamano
     @nombre.setter
     def nombre(self, nombre):
-        self.__nombre = nombre
+        if isinstance(nombre, str):
+            self.__nombre = nombre
+        else:
+            raise TypeError
     @tamano.setter
     def tamano(self, tamano):
-        self.__tamano = tamano
+        if isinstance(tamano, str):
+            if tamano.isdigit():
+                self.__tamano = int(tamano)
+            else:
+                raise ValueError
+        elif isinstance(tamano, int):
+            self.__tamano = tamano
+
+        elif isinstance(tamano, float):
+            self.__tamano = int(tamano)
+
+        else:
+            raise TypeError
 
     def recibir_disparo(self):
         """
