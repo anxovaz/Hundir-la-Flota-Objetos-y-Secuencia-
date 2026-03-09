@@ -1,21 +1,24 @@
 # Clase que representa una nave en el juego
 class Nave:
     def __init__(self, nombre, tamano):
-        """
-        Constructor de la clase Nave.
+        self.__nombre = nombre
+        self.__tamano = tamano
 
-        Args:
-            nombre (str): Nombre del barco (Submarino, Buque, Portaaviones)
-            tamano (int): Tamaño de la nave (número de casillas que ocupa)
-        """
-        pass
+    @property
+    def nombre(self):
+        return self.__nombre
+    @property
+    def tamano(self):
+        return self.__tamano
+    @nombre.setter
+    def nombre(self, nombre):
+        self.__nombre = nombre
+    @tamano.setter
+    def tamano(self, tamano):
+        self.__tamano = tamano
 
     def recibir_disparo(self):
         """
-        Procesa el impacto de un disparo en la nave.
-        Reduce la vida de la nave y devuelve el estado (Tocado/Hundido).
-
-        Returns:
-            str: Estado de la nave tras el disparo ("Tocado", "Hundido", etc.)
+        Procesa el impacto en la nave
         """
         return ""

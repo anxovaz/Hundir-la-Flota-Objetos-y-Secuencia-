@@ -1,4 +1,5 @@
 # Clase que representa el tablero del juego
+from nave import Nave
 class Tablero:
 
     def __init__(self, tamano=10):
@@ -19,4 +20,4 @@ class Tablero:
         """
 
         print("[LOG] estoy en tablero comprobando impacto")
-        return self.AGUA
+        return Nave.recibir_disparo()
