@@ -1,41 +1,39 @@
 from tablero import Tablero
 
+
 class Juego:
-    def __init__(self, tablero):
-        self.__tablero = tablero
+    def __init__(self):
+        self.lanzar_ataque(3, 2)
 
-    @property
-    def tablero(self):
-        return self.__tablero
-    @tablero.setter
-    def tablero(self,tablero):
-        if isinstance(tablero,Tablero):
-            self.__tablero = tablero
-        else:
-            raise TypeError("Tablero incorrecto")
+    def inicializar_naves(self):
+        """
+        Crea e inicializa todas las naves del juego
+        """
 
-    def lanzar_ataque(self,x,y):
-        ataque = self.__tablero.comprobar_impacto(x,y)
-        self.mostrar_resultado(ataque)
+    def mostrar_resultado(self, resultado: int):
+        """
+        Muestra por pantalla el resultado de un disparo.
 
-    def mostrar_resultado(self,resultado):
+        """
         if resultado == 0:
             print("Agua")
         elif resultado == 1:
             print("Tocado")
-        else:
+        elif resultado == 2:
             print("Hundido")
 
-        return resultado
+    def lanzar_ataque(self, x, y):
+        """
+        Ejecuta un disparo en la posición indicada
 
-    def inicializar_naves(self):
-        #colocar naves
-        pass
+        """
+        print(f"Atacando a  {x}, {y} ")
+        obj_tablero = Tablero()
+        resultado = obj_tablero.comprobar_impacto(x, y)
+        self.mostrar_resultado(resultado)
+
 
 if __name__ == "__main__":
-    t1 = Tablero(10)
-    j1 = Juego(t1)
-    j1.lanzar_ataque(2,3)
-
+    Juego()
 
 
