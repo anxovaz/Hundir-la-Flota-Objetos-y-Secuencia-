@@ -3,12 +3,13 @@ from tablero import Tablero
 
 class Juego:
     def __init__(self):
-        self.lanzar_ataque(3, 2)
+        pass
 
     def inicializar_naves(self):
         """
         Crea e inicializa todas las naves del juego
         """
+        pass
 
     def mostrar_resultado(self, resultado: int):
         """
@@ -34,6 +35,6 @@ class Juego:
 
 
 if __name__ == "__main__":
-    Juego()
+    Juego().lanzar_ataque(3, 2) #lanzar ataque
 
 
