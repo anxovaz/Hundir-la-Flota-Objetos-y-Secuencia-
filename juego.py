@@ -9,6 +9,7 @@ class Juego:
         """
         Crea e inicializa todas las naves del juego
         """
+        pass
 
     def mostrar_resultado(self, resultado: int):
         """
@@ -35,5 +36,6 @@ class Juego:
 
 if __name__ == "__main__":
     Juego()
+    Juego().lanzar_ataque(3, 2)
 
 

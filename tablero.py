@@ -28,5 +28,6 @@ class Tablero:
         """
 
         print("[LOG] estoy en tablero comprobando impacto")
-        return Nave.recibir_disparo()
+        n1 = Nave("barco",2)
+        return n1.recibir_disparo()
 
