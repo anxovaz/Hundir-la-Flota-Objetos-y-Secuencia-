@@ -54,6 +54,14 @@ class Tablero:
         """
 
         print("[LOG] estoy en tablero comprobando impacto")
-        n1 = Nave("barco",2)
-        return n1.recibir_disparo()
+        if self.casillero[x][y] == None:
+            return self.AGUA
+        else:
+            if self.casillero[x][y].tamano == 0:
+                return self.HUNDIDO
+            else:
+                return self.TOCADO
+
+    def __str__(self):
+        return f"Tablero: {self.casillero}"
 
