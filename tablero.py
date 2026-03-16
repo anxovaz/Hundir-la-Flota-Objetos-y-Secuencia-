@@ -55,11 +55,15 @@ class Tablero:
 
         print("[LOG] estoy en tablero comprobando impacto")
         if self.casillero[x][y] == None:
+            self.casillero[x][y] = 0  # lo convierte a 0 para indicar que el rival a lanzado un ataque
             return self.AGUA
         else:
-            if self.casillero[x][y].tamano == 0:
+            self.casillero[x][y].recibir_disparo() #recibe disparo
+            if self.casillero[x][y].tamano == 0: #si ya no tiene vida
+                self.casillero[x][y] = 0 #lo convierte a 0 para indicar que el rival a lanzado un ataque
                 return self.HUNDIDO
-            else:
+            else: #si aún le quieda vida
+                self.casillero[x][y] = 0 #lo convierte a 0 para indicar que el rival a lanzado un ataque
                 return self.TOCADO
 
     def __str__(self):
