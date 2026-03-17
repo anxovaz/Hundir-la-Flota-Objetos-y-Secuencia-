@@ -6,4 +6,5 @@
 
 # POC
 
-![Grabación de pantalla desde 2026-03-17 14-37-51(1)](https://github.com/user-attachments/assets/a7931524-63ea-4bde-b676-589895afa0ae)
+https://github.com/user-attachments/assets/2c8045fd-c0f2-4d47-bbc6-d934e186fd89
+
