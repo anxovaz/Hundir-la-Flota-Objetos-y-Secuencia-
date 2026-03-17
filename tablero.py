@@ -42,11 +42,16 @@ class Tablero:
         Coloca una nave en el tablero en las coordenadas especificadas
         """
 
-        for index, value in enumerate(self.casillero):
-            if index == y:
-                for i in range(0,nave.tamano):
-                    value[x] = nave
-                    x+=1
+        self.casillero[x][y] = nave
+        for i in nave.tamano:
+            if orientacion == "horizontal":
+                x+=1
+                self.casillero[x,y] = nave
+            elif orientacion == "vertical":
+                y+=1
+                self.casillero[x,y] = nave
+            else:
+                raise ValueError("Orientacion no valida (horizontal/vertical)")
 
     def comprobar_impacto(self, x, y):
         """
