@@ -63,11 +63,15 @@ class Tablero:
 
         if isinstance(self.casillero[x][y], Nave):
             self.casillero[x][y].recibir_disparo()
-            if self.casillero[x][y].tamano == 0:
+            if self.casillero[x][y].tamano == 0: #para representar que le ha dado
+                self.casillero[x][y] = 0
                 return self.HUNDIDO
             else:
+                self.casillero[x][y] = 0  #para representar que le ha dado
                 return self.TOCADO
         else:
             return self.AGUA
+
+
 
 
