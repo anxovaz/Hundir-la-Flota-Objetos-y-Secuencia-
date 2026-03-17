@@ -1,9 +1,24 @@
+from nave import Nave
 from tablero import Tablero
 
 
 class Juego:
     def __init__(self):
-        pass
+        self.obj_tablero = Tablero()
+
+        self.lanzar_ataque(1, 1)
+        self.lanzar_ataque(1, 2)
+        self.lanzar_ataque(1, 3)
+        self.lanzar_ataque(1, 4)
+        self.lanzar_ataque(1, 5)
+
+        print("---")
+
+        self.lanzar_ataque(6, 4)
+        nave1 = Nave("nave Test","submarino", 1)
+        self.obj_tablero.colocar_nave(nave1,6,4)
+        self.lanzar_ataque(6, 4)
+
 
     def inicializar_naves(self):
         """
@@ -29,12 +44,12 @@ class Juego:
 
         """
         print(f"Atacando a  {x}, {y} ")
-        obj_tablero = Tablero()
-        resultado = obj_tablero.comprobar_impacto(x, y)
+
+        resultado = self.obj_tablero.comprobar_impacto(x, y)
         self.mostrar_resultado(resultado)
 
 
 if __name__ == "__main__":
-    Juego().lanzar_ataque(3, 2) #lanzar ataque
+    Juego()
 
 
