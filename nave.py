@@ -3,10 +3,20 @@ from unboundmodule import regional_log_stats
 
 
 class Nave:
-    def __init__(self, nombre, tamano):
-        self.__nombre = nombre
-        self.__tamano = tamano
+    def __init__(self, nombre, tipo, tamano):
+        self.nombre = nombre
+        self.tamano = tamano
+        self.tipo = tipo
 
+    @property
+    def tipo(self):
+        return self.__tipo
+    @tipo.setter
+    def tipo(self, tipo):
+        if isinstance(tipo, str):
+            self.__tipo = tipo
+        else:
+            raise TypeError("Tipo tiene que ser string")
     @property
     def nombre(self):
         return self.__nombre
