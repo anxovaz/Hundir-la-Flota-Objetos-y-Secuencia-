@@ -3,6 +3,7 @@ from tablero import Tablero
 
 class Juego:
     def __init__(self):
+        self.obj_tablero = Tablero()
         self.lanzar_ataque(1, 1)
         self.lanzar_ataque(1, 2)
         self.lanzar_ataque(1, 3)
@@ -33,8 +34,8 @@ class Juego:
 
         """
         print(f"Atacando a  {x}, {y} ")
-        obj_tablero = Tablero()
-        resultado = obj_tablero.comprobar_impacto(x, y)
+
+        resultado = self.obj_tablero.comprobar_impacto(x, y)
         self.mostrar_resultado(resultado)
 
 
