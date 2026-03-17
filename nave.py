@@ -1,6 +1,3 @@
-# Clase que representa una nave en el juego
-from unboundmodule import regional_log_stats
-
 
 class Nave:
     def __init__(self, nombre, tipo, tamano):
