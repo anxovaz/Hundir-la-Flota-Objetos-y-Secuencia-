@@ -35,6 +35,6 @@ class Juego:
 
 
 if __name__ == "__main__":
-    Juego().lanzar_ataque(3, 2) #lanzar ataque
+    Juego().lanzar_ataque(1, 1) #lanzar ataque
 
 
