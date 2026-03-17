@@ -3,7 +3,11 @@ from tablero import Tablero
 
 class Juego:
     def __init__(self):
-        pass
+        self.lanzar_ataque(1, 1)
+        self.lanzar_ataque(1, 2)
+        self.lanzar_ataque(1, 3)
+        self.lanzar_ataque(1, 4)
+        self.lanzar_ataque(1, 5)
 
     def inicializar_naves(self):
         """
@@ -35,6 +39,6 @@ class Juego:
 
 
 if __name__ == "__main__":
-    Juego().lanzar_ataque(1, 1) #lanzar ataque
+    Juego()
 
 
