@@ -37,16 +37,12 @@ class Tablero:
 
 
 
-    def colocar_nave(self, nave, x, y, orientacion):
+    def colocar_nave(self, nave, x, y):
         """
         Coloca una nave en el tablero en las coordenadas especificadas
         """
 
-        for index, value in enumerate(self.casillero):
-            if index == y:
-                for i in range(0,nave.tamano):
-                    value[x] = nave
-                    x+=1
+        self.casillero[x][y] = nave
 
     def comprobar_impacto(self, x, y):
         """
