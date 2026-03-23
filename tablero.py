@@ -89,16 +89,18 @@ class Tablero:
 
 
 
-        if isinstance(self.casillero[x][y], Nave):
-            self.casillero[x][y].recibir_disparo()
-            if self.casillero[x][y].tamano == 0: #para representar que le ha dado
-                self.casillero[x][y] = 0
+        if isinstance(self.casillero[x][y], Casilla): #siempre va a ser true
+            resultado = self.casillero[x][y].recibirDisparo()
+            if resultado == -1:
+                raise Exception("No se puede atacar 2 veces la misma posición")
+            elif resultado == 1:
+                return self.TOCADO
+            elif resultado == 2:
                 return self.HUNDIDO
             else:
-                self.casillero[x][y] = 0  #para representar que le ha dado
-                return self.TOCADO
+                return self.AGUA
         else:
-            return self.AGUA
+            raise Exception("Error inesperado, objeto Tablero no creado")
 
 
 

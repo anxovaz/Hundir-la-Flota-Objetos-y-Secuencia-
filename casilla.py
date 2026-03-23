@@ -21,7 +21,7 @@ class Casilla:
 
     def recibirDisparo(self):
         '''
-        recibirDisparo devuelve 0 en caso de agua, 1 en caso de nave y -1 en caso de que el usuario haya atacado 2 veces a la misma casilla
+        recibirDisparo devuelve 0 en caso de agua, 1 en caso de nave, -1 en caso de que el usuario haya atacado 2 veces a la misma casilla y 2 hundido
         :return:
         '''
         if self.__estado == False: #si no se le ha disparado anteriormente
@@ -29,8 +29,11 @@ class Casilla:
             if self.__contenido == "agua":
                 return 0 #False indica agua
             else: #nave
-                self.__contenido.recibir_disparo()
-                return 1
+                self.__contenido.recibir_disparo() #lanza un disparo
+                if self.__contenido.tamano == 0: #si se queda sin vidas
+                    return 2
+                else:
+                    return 1
         else:
             return -1
 
