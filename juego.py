@@ -6,16 +6,18 @@ class Juego:
     def __init__(self):
         self.obj_tablero = Tablero()
 
-        self.lanzar_ataque(1, 1)
+        self.lanzar_ataque(0, 0)
         self.lanzar_ataque(1, 2)
         self.lanzar_ataque(1, 3)
-        self.lanzar_ataque(1, 4)
+        self.lanzar_ataque(2, 8)
         self.lanzar_ataque(1, 5)
 
         print("---")
 
         self.lanzar_ataque(6, 4)
         nave1 = Nave("nave Test","submarino", 1)
+        #al coolocar una nave el mét0do colocar_nave de Tablero crea una casilla en la que mete a la nave indicada, por lo cual como se está creando un nuevo objeto la variable Casilla.__estado estará como False (no visitada)
+        #para cambiarlo se puede modificar la casilla usando el setter de contenido en vez de crear una nueva
         self.obj_tablero.colocar_nave(nave1,6,4)
         self.lanzar_ataque(6, 4)
 
