@@ -73,8 +73,8 @@ class Tablero:
         """
         Coloca una nave en el tablero en las coordenadas especificadas
         """
-
-        self.casillero[x][y] = nave
+        c0 = Casilla(nave)
+        self.casillero[x][y] = c0
 
     def comprobar_impacto(self, x, y):
         """
@@ -100,6 +100,7 @@ class Tablero:
             else:
                 return self.AGUA
         else:
+            print(type(self.casillero[x][y]))
             raise Exception("Error inesperado, objeto Tablero no creado")
 
 
