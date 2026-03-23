@@ -6,5 +6,6 @@
 
 # POC
 
-https://github.com/user-attachments/assets/2c8045fd-c0f2-4d47-bbc6-d934e186fd89
+
+[Grabación de pantalla desde 2026-03-23 21-07-54.webm](https://github.com/user-attachments/assets/edb06c50-e89e-4f02-b5b4-7f4d086fc982)
 
