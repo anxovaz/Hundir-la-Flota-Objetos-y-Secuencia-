@@ -40,7 +40,7 @@ class Tablero:
         self.casillero = []
 
 
-        #crea el tablero con todo agua
+        #crea el tablero con t0do agua
         for i in range(0, tamano):
             lista = []
             for j in range(0, tamano):
