@@ -1,5 +1,18 @@
-
 class Nave:
+    '''
+    Clase que representa una nave
+
+    Attributos:
+    tipo: tipo de nave
+    nombre: nombre de nave
+    tamano: tamano de nave (que es igual a la vida)
+
+    Métodos:
+    setters y getters para atributos
+    recibir_disparo() -> le resta 1 a tamano (que tambien indica la vida)
+    __init__ -> inicializador
+    __str__ -> Devuelve un string con iformación sobre la nave
+    '''
     def __init__(self, nombre, tipo, tamano):
         self.nombre = nombre
         self.tamano = tamano
@@ -55,3 +68,6 @@ class Nave:
             raise ValueError(f"Error no esperado, el atributo tamano es negativo. self.tamano -> {self.tamano}")
         else:
             return True #confirmación de que se ha quitado 1 vida (tamano) correctamente
+
+    def __str__(self):
+        return f"Nombre {self.nombre}, Tamano {self.tamano}, Tipo {self.tipo}"

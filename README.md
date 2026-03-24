@@ -1,11 +1,17 @@
-# Tarea Hundir la flota Objetos y Secuencia
+# Tarea y Examen 2av Hundir la flota 
 
 ## Autor
 
 - Anxo Vázquez Lorenzo (Curso 1DAM)
 
-# POC
+# Funcionamiento Programa
+
+Juego de Hundir la flota que manda disparos a un tablero con casillas, el usuario tiene que intentar Hundir todos los barcos posibles
 
 
-[Grabación de pantalla desde 2026-03-23 21-07-54.webm](https://github.com/user-attachments/assets/edb06c50-e89e-4f02-b5b4-7f4d086fc982)
+# Captura del Funcionamiento
+
+
+![parida](./capturas/partida.png)
+
 
