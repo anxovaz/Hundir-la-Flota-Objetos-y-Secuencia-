@@ -14,4 +14,7 @@ Juego de Hundir la flota que manda disparos a un tablero con casillas, el usuari
 
 ![parida](./capturas/partida.png)
 
+# Captutra de la PR
+
+![PR](./capturas/pr.png)
 
