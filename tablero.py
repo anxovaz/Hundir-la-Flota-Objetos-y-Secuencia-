@@ -1,6 +1,16 @@
-# Clase que representa el tablero del juego
 from nave import Nave
 from casilla import Casilla
+'''
+Clase que representa el tablero del juego, contiene el tablero del juego con Casillas
+Atributos:
+tamano
+
+Métodos:
+__init__ -> inicializador
+colocar_nave -> coloca nave en la posición inidcada
+comprobar_impacto -> comprueba el impacto
+__str__ -> devuelve el casillero
+'''
 class Tablero:
 
     def __init__(self, tamano=10):
@@ -22,21 +32,7 @@ class Tablero:
         sub2 = Nave("U-96", "submarino", 1)
         sub3 = Nave("U-505", "submarino", 1)
         sub4 = Nave("U-534", "submarino", 1)
-        '''
-        self.casillero = [
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, por1, por1, por1, por1, por1, None, None, None, None],
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, None, None, fra1, None, None, None, None, None, None],
-            [None, None, None, fra1, None, None, sub1, None, None, None],
-            [None, None, None, fra1, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, fra2, fra2, fra2, None, None, sub3, None, None, None],
-            [None, None, None, None, None, None, None, None, None, None],
-            [None, fra3, fra3, fra3, None, sub4, None, None, None, sub2]
-        ]
 
-        '''
         self.casillero = []
 
 
@@ -48,6 +44,8 @@ class Tablero:
                 lista.append(c)
             self.casillero.append(lista)
 
+        #genera casillas con Naves
+
         casilla01 = Casilla(por1)
         casilla11 = Casilla(fra1)
         casilla12 = Casilla(fra2)
@@ -57,6 +55,7 @@ class Tablero:
         casilla23 = Casilla(sub3)
         casilla24 = Casilla(sub4)
 
+        #agrega las Naves al Tablero
 
         self.casillero[0][0]=casilla01
         self.casillero[6][1]=casilla11
@@ -67,7 +66,6 @@ class Tablero:
         self.casillero[2][7]=casilla23
         self.casillero[2][8]=casilla24
 
-        print(self.casillero)
 
     def colocar_nave(self, nave, x, y):
         """
@@ -78,14 +76,10 @@ class Tablero:
 
     def comprobar_impacto(self, x, y):
         """
-        Comprueba si hay una nave en las coordenadas indicadas
+        Comprueba si hay una nave en las coordenadas indicadas y devuelve el resultado con las constantes: self.TOCADO, self.HUNDIDO, self.AGUA
         """
 
         print("[LOG] estoy en tablero comprobando impacto")
-        '''
-        n1 = Nave("barco",2)
-        return n1.recibir_disparo()
-        '''
 
 
 
@@ -99,10 +93,10 @@ class Tablero:
                 return self.HUNDIDO
             else:
                 return self.AGUA
-        else:
-            print(type(self.casillero[x][y]))
-            raise Exception("Error inesperado, objeto Tablero no creado")
+        else: #no devería de llegar aquí nunca, pero en caso de que suceda se detendría la qjecución
+            raise Exception("Error inesperado, objeto Casilla no creado")
 
 
-
+    def __str__(self):
+        return f"{self.casillero}"
 
