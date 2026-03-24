@@ -1,11 +1,24 @@
 from nave import Nave
 from tablero import Tablero
 
+'''
+Clase que gestiona el Juego, el init lanza los ataques e instancia el tablero
 
+Atributos:
+N/A
+
+Métodos:
+__init__ -> gestor del juego
+mostrtar_resultado -> muestra el resultado por pantalla
+lanzar_ataque -> lanzar ataque
+
+'''
 class Juego:
     def __init__(self):
+        #instancia Tablero
         self.obj_tablero = Tablero()
 
+        #Lanza ataques
         self.lanzar_ataque(0, 0)
         self.lanzar_ataque(1, 2)
         self.lanzar_ataque(1, 3)
@@ -14,6 +27,7 @@ class Juego:
 
         print("---")
 
+        #prueba para comprobar el mét0do colocar_nave()
         self.lanzar_ataque(6, 4)
         nave1 = Nave("nave Test","submarino", 1)
         #al coolocar una nave el mét0do colocar_nave de Tablero crea una casilla en la que mete a la nave indicada, por lo cual como se está creando un nuevo objeto la variable Casilla.__estado estará como False (no visitada)
@@ -21,12 +35,6 @@ class Juego:
         self.obj_tablero.colocar_nave(nave1,6,4)
         self.lanzar_ataque(6, 4)
 
-
-    def inicializar_naves(self):
-        """
-        Crea e inicializa todas las naves del juego
-        """
-        pass
 
     def mostrar_resultado(self, resultado: int):
         """
@@ -42,7 +50,7 @@ class Juego:
 
     def lanzar_ataque(self, x, y):
         """
-        Ejecuta un disparo en la posición indicada
+        Ejecuta un disparo en la posición indicada y muestra el resultado usando el mét0do mostrar_resultado
 
         """
         print(f"Atacando a  {x}, {y} ")
